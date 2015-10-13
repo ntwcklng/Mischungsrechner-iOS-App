@@ -4,17 +4,26 @@ var {
   StyleSheet,
 } = React;
 
+var metaFontSize = 15;
+var resultButtonPadding = 25;
+
 var styles = StyleSheet.create({
   container: {
     backgroundColor: '#44bcff',
-    paddingTop: 30,
-    paddingBottom: 30,
+    paddingTop: resultButtonPadding,
+    paddingBottom: resultButtonPadding,
+  },
+  results: {
+    backgroundColor: '#44bcff',
+    marginBottom: 8,
+    paddingTop: 15,
+    paddingBottom: 15
   },
   text: {
     color: '#FFFFFF',
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 17
+    fontSize: metaFontSize
   },
   resultText: {
     color: '#FFFFFF',
@@ -25,7 +34,25 @@ var styles = StyleSheet.create({
   resetText: {
     color: '#44bcff',
     textAlign: 'center',
-    fontSize: 17
+    fontSize: metaFontSize
+  },
+  resetButton: {
+    borderWidth: 1,
+    borderColor: '#44bcff',
+    padding: 10,
+    marginRight: 8,
+    flex:1
+  },
+  infoButton: {
+    backgroundColor:'#44bcff',
+    padding: 10,
+    marginRight: 0,
+    flex:1
+  },
+  metaView: {
+    flex:1,
+    flexDirection: 'row',
+    justifyContent:'center'
   }
 });
 

@@ -11,11 +11,27 @@ var {
 var BottlePicker = React.createClass({
   getInitialState() {
     return {
-      values: ['100', '200', '250', '437', '500', '1000'],
-      bottleValue: undefined
+      values: ['250ml', '473ml', '500ml', '1000ml', '15l', '20l'],
+      bottleValue: 0,
+      bumpedUp: 0
     };
   },
+  componentWillReceiveProps(next) {
+    this.setState({
+      bottleValue: next.bottleValue,
+    });
+  },
+  _onFocus() {
+    var scrollView = this.refs.bottleInput.getScrollResponder();
+    var scrollResponder = scrollView.getScrollRef();
+    scrollResponder.scrollResponderScrollNativeHandleToKeyboard(
+      React.findNodeHandle(this.refs.bottleInput),
+      0, // adjust depending on your contentInset
+      /* preventNegativeScrollOffset */ true
+    );
+  },
   _onValueChange(value) {
+    // value = value.toString();
     this.setState({
       bottleValue: value
     });
@@ -23,7 +39,7 @@ var BottlePicker = React.createClass({
   },
   render: function() {
     return (
-      <View style={Styles.container}>
+      <View style={[Styles.container]}>
       <Text style={Styles.text}>Flaschengröße in ml</Text>
       <TextInput
           onChangeText={this._onValueChange}
@@ -33,6 +49,10 @@ var BottlePicker = React.createClass({
           returnKeyType='done'
           clearButtonMode='always'
           selectTextOnFocus={true}
+          onFocus={() => this.props.bump(true)}
+          onEndEditing={() => this.props.bump(false)}
+          placeholder='Sprühflasche, Eimer etc'
+          autoCorrect={false}
       />
         <Text style={Styles.text}>Beliebte Flaschengrößen</Text>
         <SegmentedControlIOS
@@ -41,7 +61,10 @@ var BottlePicker = React.createClass({
             tintColor='#44bcff'
             momentary={true}
         />
+        <View style={{height: this.state.keyboardSpace}} />
+
       </View>
+
     );
   }
 });

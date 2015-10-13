@@ -19,7 +19,8 @@ var MischungsrechnerContent = React.createClass({
     return {
       bottleValue: 0,
       part1Value: 0,
-      part2Value: 0
+      part2Value: 0,
+      bumpedUp: false
     };
   },
   _ResultViewPress() {
@@ -30,19 +31,27 @@ var MischungsrechnerContent = React.createClass({
     });
   },
   bottlePickerValueChange (value) {
+    // if(!value) { return; }
+    if(value === '15l' || value === '20l') {
+      value = (parseInt(value)*1000).toString();
+      value += 'l';
+    }
     this.setState({
       bottleValue: value
     });
   },
   _resetResult() {
     this.setState({
-      bottleValue: undefined,
-      part1Value: undefined,
-      part2Value: undefined
+      bottleValue: '',
+      part1Value: '',
+      part2Value: ''
     });
-    this.forceUpdate();
   },
-
+  handleBump(bool) {
+    this.setState({
+      bumpedUp: bool
+    });
+  },
   render: function() {
     if(this.state.part1Value !== 0 && this.state.part2Value !== 0 && this.state.bottleValue !== 0) {
       calc = Calculate(parseInt(this.state.part1Value), parseInt(this.state.part2Value), this.state.bottleValue);
@@ -51,15 +60,19 @@ var MischungsrechnerContent = React.createClass({
     }
     var resultOpacity = (calc[0] != 0) ? true : false;
     return (
-      <View style={Styles.container}>
+      <View style={[Styles.container, this.state.bumpedUp && {marginBottom: 250, marginTop: -250}]}>
         <PartPicker
             val1Change={(value) => this.setState({part1Value: value})}
             val2Change={(value) => this.setState({part2Value: value})}
             part1Value={this.state.part1Value}
-            part2Value={this.state.part2Value}/>
-        <View
-            style={Styles.hr} />
-        <BottlePicker bottlePickerValueChange={this.bottlePickerValueChange}/>
+            part2Value={this.state.part2Value}
+        />
+        <View style={Styles.hr} />
+        <BottlePicker
+            bottlePickerValueChange={this.bottlePickerValueChange}
+            bottleValue={this.state.bottleValue}
+            bump={this.handleBump}
+        />
         {resultOpacity && <Result result={calc[0]} handlePress={this._ResultViewPress} handlePressReset={this._resetResult}/>}
       </View>
     );

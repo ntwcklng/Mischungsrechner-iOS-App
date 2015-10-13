@@ -11,11 +11,20 @@ var ResultView = React.createClass({
     var part2InML = this.props.result.split(':')[1];
     var flex1 = parseInt(this.props.part1);
     var flex2 = parseInt(this.props.part2);
-    if(flex1/flex2 <= 0.03) {
-      flex1 = flex1 + 1;
+    // if(flex1/flex2 <= 0.03) {
+    //   flex1 = flex1 + 1;
+    //   flex2 = flex2/10;
+    // } else if(flex1/flex2 <= 0.002) {
+    //   flex1 = flex1 + 1;
+    //   flex2 = flex2/100;
+    // }
+    if(flex2 >= 250 && flex2 <= 400) {
       flex2 = flex2/10;
-    } else if(flex1/flex2 <= 0.002) {
-      flex1 = flex1 + 1;
+    }
+    if(flex2 >= 401 && flex2 <= 1000) {
+      flex2 = flex2/60;
+    }
+    if(flex2 >= 1001 && flex2 <= 2000) {
       flex2 = flex2/100;
     }
     return (

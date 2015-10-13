@@ -16,18 +16,18 @@ var Result = React.createClass({
   render: function() {
     return (
       <View style={{flex:1}}>
-        <View style={{backgroundColor: '#44bcff', marginBottom: 8, padding: 10}}>
-          <Text style={Styles.resultText}>12ml:2339ml</Text>
+        <View style={Styles.results}>
+          <Text style={Styles.resultText}>{this.props.result}</Text>
         </View>
-        <View style={{flex:1, flexDirection: 'row', justifyContent:'center'}}>
+        <View style={Styles.metaView}>
           <TouchableHighlight
-              style={{borderWidth: 1, borderColor: '#44bcff', padding: 10, marginRight: 8, flex:1}}
+              style={Styles.resetButton}
               onPress={this._onClickReset}
               underlayColor='#9DDAFC'>
               <Text style={Styles.resetText}>Reset</Text>
           </TouchableHighlight>
           <TouchableHighlight
-              style={{backgroundColor:'#44bcff', padding: 10, marginRight: 0, flex:1}}
+              style={Styles.infoButton}
               underlayColor='#9DDAFC'
               onPress={this._onClick}>
               <Text style={Styles.text}>Info</Text>

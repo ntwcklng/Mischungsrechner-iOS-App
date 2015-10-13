@@ -47,7 +47,7 @@ var Mischungsrechner = React.createClass({
             initialRoute={{
               title: 'Mischungsrechner',
               component: DefaultView,
-              rightButtonTitle: 'Info',
+              rightButtonTitle: 'Hilfe',
               onRightButtonPress: this.onRightButtonPress
             }}
         />

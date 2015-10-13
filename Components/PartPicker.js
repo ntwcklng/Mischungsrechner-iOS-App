@@ -1,20 +1,27 @@
 var React = require('react-native');
 var Styles = require('../Styles/PartPicker');
-
 var {
   View,
   Text,
   TextInput,
-  SegmentedControlIOS
+  SegmentedControlIOS,
+  PickerIOS
 } = React;
-
+var PickerItemIOS = PickerIOS.Item;
 var BottlePicker = React.createClass({
   getInitialState() {
     return {
       values: ['1:2', '1:4', '1:10', '1:13', '1:20'],
       part1Value: undefined,
       part2Value: undefined,
+
     };
+  },
+  componentWillReceiveProps(next) {
+    this.setState({
+      part1Value: next.part1Value,
+      part2Value: next.part2Value,
+    });
   },
   _onValueChange1(value) {
     this.setState({part1Value: value});
@@ -47,6 +54,8 @@ var BottlePicker = React.createClass({
             returnKeyType='done'
             clearButtonMode='always'
             selectTextOnFocus={true}
+            placeholder='Produkt'
+            autoCorrect={false}
         />
         <Text style={Styles.text}>Verhältnis 2</Text>
         <TextInput
@@ -57,6 +66,8 @@ var BottlePicker = React.createClass({
             returnKeyType='done'
             clearButtonMode='always'
             selectTextOnFocus={true}
+            placeholder='Wasser'
+            autoCorrect={false}
         />
         <Text style={Styles.text}>Beliebte Mischungsverhältnisse</Text>
         <SegmentedControlIOS
