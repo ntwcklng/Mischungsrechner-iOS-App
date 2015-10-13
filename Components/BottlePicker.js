@@ -5,7 +5,8 @@ var {
   View,
   Text,
   SegmentedControlIOS,
-  TextInput
+  TextInput,
+  ScrollView
 } = React;
 
 var BottlePicker = React.createClass({
@@ -21,17 +22,7 @@ var BottlePicker = React.createClass({
       bottleValue: next.bottleValue,
     });
   },
-  _onFocus() {
-    var scrollView = this.refs.bottleInput.getScrollResponder();
-    var scrollResponder = scrollView.getScrollRef();
-    scrollResponder.scrollResponderScrollNativeHandleToKeyboard(
-      React.findNodeHandle(this.refs.bottleInput),
-      0, // adjust depending on your contentInset
-      /* preventNegativeScrollOffset */ true
-    );
-  },
   _onValueChange(value) {
-    // value = value.toString();
     this.setState({
       bottleValue: value
     });

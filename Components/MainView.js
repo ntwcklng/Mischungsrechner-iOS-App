@@ -9,7 +9,7 @@ var DefaultView = React.createClass({
   render() {
     return (
       <View style={{backgroundColor: '#fbfbfb', flex:1}}>
-        <ScrollView>
+        <ScrollView keyboardShouldPersistTaps={false}>
           <MischungsrechnerContent navi={this.props.navigator} />
         </ScrollView>
       </View>

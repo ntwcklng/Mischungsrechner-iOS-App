@@ -8,7 +8,7 @@ var styles = StyleSheet.create({
   container: {
     paddingTop: 30,
     paddingBottom: 10,
-    marginBottom: 20,
+    marginBottom: 20
   },
   input: {
     borderWidth: 1,

@@ -31,7 +31,6 @@ var MischungsrechnerContent = React.createClass({
     });
   },
   bottlePickerValueChange (value) {
-    // if(!value) { return; }
     if(value === '15l' || value === '20l') {
       value = (parseInt(value)*1000).toString();
       value += 'l';

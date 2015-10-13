@@ -10,18 +10,18 @@ var HelpView = React.createClass({
     return (
       <View style={{flex:1, padding: 20, paddingTop:74, backgroundColor:'#fbfbfb'}}>
         <Text style={{fontSize: 18}}>
-          Viele Produkte in der Autopflege und in anderen Bereichen sind stark konzentriert und müssen erst mit Wasser gemischt werden.
+          In der Autopflege gibt es unzählige Pflegeprodukte. Einige von diesen müssen für die korrekte Anwendung mit destilliertem oder Leitungswasser verdünnt werden.
         </Text>
         <Text style={{paddingTop: 20, fontSize: 18}}>
-          Trage deine gewünschten Mischungsverhältnisse (z.B. 1:4, 1:25, 1:200 etc) in die ersten beiden Eingabefelder ein, oder wähle eine der beliebten und häufig genutzten Mischungsverhältnisse aus.
+          Um dir die umständliche Rechenarbeit abzunehmen, kannst du die gewünschten Mischungsverhältnisse (z.B. 1:4, 1:25 etc.) in den ersten beiden Eingabefeldern eintragen oder eines der beliebten Mischungsverhältnisse direkt auswählen.
         </Text>
         <Text style={{paddingTop: 20, fontSize: 18}}>
-          Damit das Mischungsverhältnis berechnet werden kann, musst du im nächsten Eingabefeld deine Flaschengröße in ml angeben. Alternativ wählst du in der Auswahl darunter eine Größe aus.
+          Ergänze im letzten Eingabefeld einfach die Flaschen bzw. Eimergröße in ml. Als kleine Hilfe haben wir Dir die gängigsten Größen bereits hinterlegt.
         </Text>
         <Text style={{paddingTop: 20, fontSize: 18}}>
-          Wenn du alle Daten korrekt eingegeben hast, wird dir dein Mischungsverhältnis in einen blauen Button angezeigt. Du kannst diesen anklicken um mehr über das Verhältnis zu erfahren.
+          Wenn du alles eingegeben hast, erscheint das gewünschte Mischungsverhältnis sofort unten im blauen Feld. Klicke auf Info um mehr über das Mischungsverhältnis zu erfahren oder lösche alle Eingaben mit den Reset-Knopf.
         </Text>
-        
+
       </View>
     );
   }
