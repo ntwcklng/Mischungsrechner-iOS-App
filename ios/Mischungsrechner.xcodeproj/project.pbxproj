@@ -614,7 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NZ3MYR5VXG.org.reactjs.marvinmieth.Mischungsrechner;
 				PRODUCT_NAME = Mischungsrechner;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -636,7 +636,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NZ3MYR5VXG.org.reactjs.marvinmieth.Mischungsrechner;
 				PRODUCT_NAME = Mischungsrechner;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
