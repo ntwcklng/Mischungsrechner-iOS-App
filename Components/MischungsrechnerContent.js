@@ -34,7 +34,14 @@ var MischungsrechnerContent = React.createClass({
       bottleValue: value
     });
   },
-
+  _resetResult() {
+    this.setState({
+      bottleValue: undefined,
+      part1Value: undefined,
+      part2Value: undefined
+    });
+    this.forceUpdate();
+  },
 
   render: function() {
     if(this.state.part1Value !== 0 && this.state.part2Value !== 0 && this.state.bottleValue !== 0) {
@@ -42,23 +49,23 @@ var MischungsrechnerContent = React.createClass({
     } else {
       calc[0] = 0;
     }
-    var resultOpacity = (calc[0] != 0) ? 1 : 0;
+    var resultOpacity = (calc[0] != 0) ? true : false;
     return (
       <View style={Styles.container}>
-        <PartPicker 
-            val1Change={(value) => this.setState({part1Value: value})} 
+        <PartPicker
+            val1Change={(value) => this.setState({part1Value: value})}
             val2Change={(value) => this.setState({part2Value: value})}
             part1Value={this.state.part1Value}
             part2Value={this.state.part2Value}/>
-        <View 
-            style={{height:2, backgroundColor:'rgba(0,0,0,.1)', borderRadius: 10, marginTop: 20, marginBottom: 5}} />
+        <View
+            style={Styles.hr} />
         <BottlePicker bottlePickerValueChange={this.bottlePickerValueChange}/>
-        
-        <View style={{opacity: resultOpacity}}>
-          <Result result={calc[0]} handlePress={this._ResultViewPress} />
-        </View>
+        {resultOpacity && <Result result={calc[0]} handlePress={this._ResultViewPress} handlePressReset={this._resetResult}/>}
       </View>
     );
   }
 });
 module.exports = MischungsrechnerContent;
+// <View style={{opacity: resultOpacity}}>
+//   <Result result={calc[0]} handlePress={this._ResultViewPress} />
+// </View>

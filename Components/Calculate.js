@@ -1,7 +1,9 @@
 function Calc(part1, part2, bottle) {
+  var reg = new RegExp('^[0-9]+$');
   part1 = parseInt(part1);
   part2 = parseInt(part2);
-  if((part1 === 0 || !part1) || (part2 === 0 || !part2) || bottle === 0) {
+  bottle = parseInt(bottle);
+  if((part1 === 0 || !part1) || (part2 === 0 || !part2) || (bottle === 0 || !bottle)) {
     return [0,0];
   }
   var parts = part1 + part2;

@@ -20,7 +20,7 @@ var ResultView = React.createClass({
     }
     return (
       <View style={Styles.container}>
-      <Text style={{marginBottom: 10, fontSize: 18}}>Dein Mischungsverhältnis ist {this.props.result} auf einer Flaschengröße von {this.props.bottle}ml.</Text>
+      <Text style={{marginBottom: 10, fontSize: 18}}>Dein Mischungsverhältnis ist {this.props.result} auf einer Flaschengröße von {parseInt(this.props.bottle)}ml.</Text>
         <View style={{flex: flex1, backgroundColor: '#44bcff', justifyContent:'center'}}>
           <Text style={Styles.partText}>{part1InML} ({this.props.part1})</Text>
         </View>

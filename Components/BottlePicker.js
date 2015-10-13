@@ -32,13 +32,14 @@ var BottlePicker = React.createClass({
           keyboardType='default'
           returnKeyType='done'
           clearButtonMode='always'
-          selectTextOnFocus='true'
+          selectTextOnFocus={true}
       />
         <Text style={Styles.text}>Beliebte Flaschengrößen</Text>
         <SegmentedControlIOS
             values={this.state.values}
             onValueChange={this._onValueChange}
             tintColor='#44bcff'
+            momentary={true}
         />
       </View>
     );

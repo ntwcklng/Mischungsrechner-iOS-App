@@ -14,15 +14,14 @@ var BottlePicker = React.createClass({
       values: ['1:2', '1:4', '1:10', '1:13', '1:20'],
       part1Value: undefined,
       part2Value: undefined,
-      segmentIndex: undefined
     };
   },
   _onValueChange1(value) {
-    this.setState({part1Value: value, segmentIndex: undefined});
+    this.setState({part1Value: value});
     this.props.val1Change(value);
   },
   _onValueChange2(value) {
-    this.setState({part2Value: value, segmentIndex: undefined});
+    this.setState({part2Value: value});
     this.props.val2Change(value);
   },
   _onValueChangeSegment(value) {
@@ -47,7 +46,7 @@ var BottlePicker = React.createClass({
             keyboardType='default'
             returnKeyType='done'
             clearButtonMode='always'
-            selectTextOnFocus='true'
+            selectTextOnFocus={true}
         />
         <Text style={Styles.text}>Verhältnis 2</Text>
         <TextInput
@@ -57,14 +56,14 @@ var BottlePicker = React.createClass({
             keyboardType='default'
             returnKeyType='done'
             clearButtonMode='always'
-            selectTextOnFocus='true'
+            selectTextOnFocus={true}
         />
         <Text style={Styles.text}>Beliebte Mischungsverhältnisse</Text>
         <SegmentedControlIOS
             values={this.state.values}
             onValueChange={this._onValueChangeSegment}
             tintColor='#44bcff'
-            selectedIndex={this.state.segmentIndex}
+            momentary={true}
         />
       </View>
     );
