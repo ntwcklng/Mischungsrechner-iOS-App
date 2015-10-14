@@ -30,11 +30,44 @@ var MischungsrechnerContent = React.createClass({
       passProps: { result: calc[0], bottle: this.state.bottleValue, part1: this.state.part1Value, part2: this.state.part2Value }
     });
   },
+  part1ValueChange(value) {
+    if(!value) {
+      this.setState({
+        part1Value: ''
+      });
+      return;
+    } else {
+      this.setState({
+        part1Value: value
+      });
+    }
+  },
+  part2ValueChange(value) {
+    if(!value) {
+      this.setState({
+        part2Value: ''
+      });
+      return;
+    } else {
+      this.setState({
+        part2Value: value
+      });
+    }
+  },
   bottlePickerValueChange (value) {
+    if(!value) {
+      this.setState({
+        bottleValue: ''
+      });
+      return;
+    }
+
     if(value === '15l' || value === '20l') {
       value = (parseInt(value)*1000).toString();
-      value += 'l';
+    } else {
+      value = (parseInt(value)).toString();
     }
+
     this.setState({
       bottleValue: value
     });
@@ -59,10 +92,10 @@ var MischungsrechnerContent = React.createClass({
     }
     var resultOpacity = (calc[0] != 0) ? true : false;
     return (
-      <View style={[Styles.container, this.state.bumpedUp && {marginBottom: 250, marginTop: -250}]}>
+      <View style={[Styles.container, this.state.bumpedUp && {marginBottom: 220, marginTop: -220}]}>
         <PartPicker
-            val1Change={(value) => this.setState({part1Value: value})}
-            val2Change={(value) => this.setState({part2Value: value})}
+            val1Change={(value) => this.part1ValueChange(value)}
+            val2Change={(value) => this.part2ValueChange(value)}
             part1Value={this.state.part1Value}
             part2Value={this.state.part2Value}
         />

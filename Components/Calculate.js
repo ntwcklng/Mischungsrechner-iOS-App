@@ -21,7 +21,9 @@ function Calc(part1, part2, bottle) {
     res2[0] = res2[0]/1000;
     res2MLL = 'l';
   }
-  var result = res1[0] + '' + res1MLL + ' : ' + res2[0] + '' + res2MLL;
+  var stepResult1 = res1[0].toString().replace('.', ',');
+  var stepResult2 = res2[0].toString().replace('.', ',');
+  var result = stepResult1 + '' + res1MLL + ' : ' + stepResult2 + '' + res2MLL;
 
   var res = [result, percentage];
   return res;

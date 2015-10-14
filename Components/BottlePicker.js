@@ -23,6 +23,8 @@ var BottlePicker = React.createClass({
     });
   },
   _onValueChange(value) {
+    if(!value.match(/\d/g)) { value = null; }
+
     this.setState({
       bottleValue: value
     });
@@ -31,12 +33,12 @@ var BottlePicker = React.createClass({
   render: function() {
     return (
       <View style={[Styles.container]}>
-      <Text style={Styles.text}>Flaschengröße in ml</Text>
+      <Text style={Styles.text}>Behältergröße in ml</Text>
       <TextInput
           onChangeText={this._onValueChange}
           value={this.state.bottleValue}
           style={Styles.input}
-          keyboardType='default'
+          keyboardType='number-pad'
           returnKeyType='done'
           clearButtonMode='always'
           selectTextOnFocus={true}
@@ -45,7 +47,7 @@ var BottlePicker = React.createClass({
           placeholder='Sprühflasche, Eimer etc'
           autoCorrect={false}
       />
-        <Text style={Styles.text}>Beliebte Flaschengrößen</Text>
+        <Text style={Styles.text}>Beliebte Behältergröße</Text>
         <SegmentedControlIOS
             values={this.state.values}
             onValueChange={this._onValueChange}

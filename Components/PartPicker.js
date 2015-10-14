@@ -24,10 +24,12 @@ var BottlePicker = React.createClass({
     });
   },
   _onValueChange1(value) {
+    if(!value.match(/\d/g)) { value = null; }
     this.setState({part1Value: value});
     this.props.val1Change(value);
   },
   _onValueChange2(value) {
+    if(!value.match(/\d/g)) { value = null; }
     this.setState({part2Value: value});
     this.props.val2Change(value);
   },
@@ -50,7 +52,7 @@ var BottlePicker = React.createClass({
             onChangeText={this._onValueChange1}
             value={this.state.part1Value}
             style={Styles.input}
-            keyboardType='default'
+            keyboardType='number-pad'
             returnKeyType='done'
             clearButtonMode='always'
             selectTextOnFocus={true}
@@ -62,7 +64,7 @@ var BottlePicker = React.createClass({
             onChangeText={this._onValueChange2}
             value={this.state.part2Value}
             style={Styles.input}
-            keyboardType='default'
+            keyboardType='number-pad'
             returnKeyType='done'
             clearButtonMode='always'
             selectTextOnFocus={true}
