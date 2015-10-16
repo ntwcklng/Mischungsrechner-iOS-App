@@ -12,7 +12,7 @@ var {
 var BottlePicker = React.createClass({
   getInitialState() {
     return {
-      values: ['250ml', '473ml', '500ml', '1000ml', '15l', '20l'],
+      values: ['250ml', '473ml', '500ml', '1l', '15l', '20l'],
       bottleValue: 0,
       bumpedUp: 0
     };
@@ -33,21 +33,21 @@ var BottlePicker = React.createClass({
   render: function() {
     return (
       <View style={[Styles.container]}>
-      <Text style={Styles.text}>Behältergröße in ml</Text>
-      <TextInput
-          onChangeText={this._onValueChange}
-          value={this.state.bottleValue}
-          style={Styles.input}
-          keyboardType='number-pad'
-          returnKeyType='done'
-          clearButtonMode='always'
-          selectTextOnFocus={true}
-          onFocus={() => this.props.bump(true)}
-          onEndEditing={() => this.props.bump(false)}
-          placeholder='Sprühflasche, Eimer etc'
-          autoCorrect={false}
-      />
-        <Text style={Styles.text}>Beliebte Behältergröße</Text>
+        <Text style={Styles.text}>Flaschen bzw. Eimergröße in ml</Text>
+        <TextInput
+            onChangeText={this._onValueChange}
+            value={this.state.bottleValue}
+            style={Styles.input}
+            keyboardType='number-pad'
+            returnKeyType='done'
+            clearButtonMode='always'
+            selectTextOnFocus={true}
+            onFocus={() => this.props.bump(true)}
+            onEndEditing={() => this.props.bump(false)}
+            placeholder='Sprühflasche, Eimer etc.'
+            autoCorrect={false}
+        />
+        <Text style={Styles.text}>Häufig genutzte Größen</Text>
         <SegmentedControlIOS
             values={this.state.values}
             onValueChange={this._onValueChange}
@@ -55,9 +55,7 @@ var BottlePicker = React.createClass({
             momentary={true}
         />
         <View style={{height: this.state.keyboardSpace}} />
-
       </View>
-
     );
   }
 });

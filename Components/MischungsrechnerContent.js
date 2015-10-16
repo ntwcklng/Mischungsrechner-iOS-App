@@ -62,7 +62,7 @@ var MischungsrechnerContent = React.createClass({
       return;
     }
 
-    if(value === '15l' || value === '20l') {
+    if(value === '15l' || value === '20l' || value === '1l') {
       value = (parseInt(value)*1000).toString();
     } else {
       value = (parseInt(value)).toString();
