@@ -80,9 +80,12 @@ var MischungsrechnerContent = React.createClass({
     });
   },
   handleBump(bool) {
-    this.setState({
-      bumpedUp: bool
-    });
+    // this.setState({
+    //   bumpedUp: bool
+    // });
+  },
+  inputFocusScroll(ref) {
+    this.props.inputFocusScroll(ref);
   },
   render: function() {
     if(this.state.part1Value !== 0 && this.state.part2Value !== 0 && this.state.bottleValue !== 0) {
@@ -98,12 +101,14 @@ var MischungsrechnerContent = React.createClass({
             val2Change={(value) => this.part2ValueChange(value)}
             part1Value={this.state.part1Value}
             part2Value={this.state.part2Value}
+            inputFocusScrollHandle={(ref) => this.props.inputFocusScroll(ref)}
         />
         <View style={Styles.hr} />
         <BottlePicker
             bottlePickerValueChange={this.bottlePickerValueChange}
             bottleValue={this.state.bottleValue}
             bump={this.handleBump}
+            inputFocusScrollHandle={(ref) => this.props.inputFocusScroll(ref)}
         />
         {resultOpacity && <Result result={calc[0]} handlePress={this._ResultViewPress} handlePressReset={this._resetResult}/>}
       </View>

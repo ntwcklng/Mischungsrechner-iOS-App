@@ -18,7 +18,7 @@ var HelpView = React.createClass({
           Um dir die umständliche Rechenarbeit abzunehmen, kannst du die gewünschten Mischungsverhältnisse (z.B. 1:4, 1:25 etc.) in den ersten beiden Eingabefeldern eintragen oder eines der beliebten Mischungsverhältnisse direkt auswählen.
         </Text>
         <Text style={{paddingTop: 20, fontSize: 18}}>
-          Ergänze im letzten Eingabefeld einfach die Flaschen bzw. Eimergröße in ml. Als kleine Hilfe haben wir Dir die gängigsten Größen bereits hinterlegt.
+          Ergänze im letzten Eingabefeld einfach die Flaschen- bzw. Eimergröße in ml. Als kleine Hilfe haben wir dir die gängigsten Größen bereits hinterlegt.
         </Text>
         <Text style={{paddingTop: 20, fontSize: 18}}>
           Wenn du alles eingegeben hast, erscheint das gewünschte Mischungsverhältnis sofort unten im blauen Feld. Klicke auf Info um mehr über das Mischungsverhältnis zu erfahren oder lösche alle Eingaben mit dem Reset-Knopf.
