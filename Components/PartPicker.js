@@ -58,8 +58,6 @@ var BottlePicker = React.createClass({
             selectTextOnFocus={true}
             placeholder='Produkt'
             autoCorrect={false}
-            onFocus={() => this.props.inputFocusScrollHandle(this.refs.partPicker1)}
-            ref='partPicker1'
         />
         <Text style={Styles.text}>Verhältnis 2</Text>
         <TextInput
