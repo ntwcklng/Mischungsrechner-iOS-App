@@ -8,6 +8,6 @@
   "dependencies": {
     "eslint": "^1.6.0",
     "eslint-plugin-react": "^3.5.1",
-    "react-native": "^0.11.4"
+    "react-native": "^0.13.0"
   }
 }
