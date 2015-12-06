@@ -4,11 +4,16 @@
   "private": true,
   "scripts": {
     "start": "node_modules/react-native/packager/packager.sh",
+    "test": "node test.js | tap-spec",
     "build": "react-native bundle --entry-file index.ios.js --platform ios --bundle-output ios/main.jsbundle --dev false"
   },
   "dependencies": {
     "eslint": "^1.6.0",
     "eslint-plugin-react": "^3.5.1",
     "react-native": "^0.14.1"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.2.2"
   }
 }
