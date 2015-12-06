@@ -1,11 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-
 var React = require('react-native');
 var TitleBar = require('./Components/TitleBar');
-// var MischungsrechnerContent = require('./Components/MischungsrechnerContent');
 var Result = require('./Components/Result');
 var HelpView = require('./Components/HelpView');
 var DefaultView = require('./Components/MainView');
