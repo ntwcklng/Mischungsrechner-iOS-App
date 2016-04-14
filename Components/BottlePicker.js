@@ -38,9 +38,9 @@ var BottlePicker = React.createClass({
           <Text style={Styles.text}>Flaschen- bzw. Eimergröße in ml</Text>
           <TextInput
               onChangeText={this._onValueChange}
-              value={this.state.bottleValue.toString()}
+              value={this.state.bottleValue}
               style={Styles.input}
-              keyboardType='number-pad'
+              keyboardType='numbers-and-punctuation'
               returnKeyType='done'
               clearButtonMode='always'
               selectTextOnFocus={true}

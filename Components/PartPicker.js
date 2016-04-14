@@ -1,4 +1,5 @@
 var React = require('react-native');
+var dismissKeyboard = require('dismissKeyboard');
 var Styles = require('../Styles/PartPicker');
 var {
   View,
@@ -50,10 +51,11 @@ var BottlePicker = React.createClass({
         <Text style={Styles.text}>Verhältnis 1</Text>
         <TextInput
             onChangeText={this._onValueChange1}
+            onBlur={()=>dismissKeyboard()}
             value={this.state.part1Value}
             style={Styles.input}
-            keyboardType='numeric'
-            returnKeyType={'done'}
+            keyboardType='numbers-and-punctuation'
+            returnKeyType='done'
             clearButtonMode='always'
             selectTextOnFocus={true}
             placeholder='Produkt'
@@ -64,8 +66,10 @@ var BottlePicker = React.createClass({
             onChangeText={this._onValueChange2}
             value={this.state.part2Value}
             style={Styles.input}
-            keyboardType='numeric'
-            returnKeyType={'done'}
+            onBlur={()=>dismissKeyboard()}
+
+            keyboardType='numbers-and-punctuation'
+            returnKeyType='done'
             clearButtonMode='always'
             selectTextOnFocus={true}
             placeholder='Wasser'
