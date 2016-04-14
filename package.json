@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node_modules/react-native/packager/packager.sh",
     "test": "node test.js | tap-spec",
-    "build": "react-native bundle --entry-file index.ios.js --platform ios --bundle-output ios/main.jsbundle --dev false"
+    "build": "react-native bundle --entry-file index.ios.js --platform ios --bundle-output ios/main.jsbundle --dev true"
   },
   "dependencies": {
     "eslint": "^1.6.0",

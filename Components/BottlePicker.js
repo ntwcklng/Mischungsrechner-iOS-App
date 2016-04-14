@@ -34,31 +34,31 @@ var BottlePicker = React.createClass({
     // onFocus={() => this.props.bump(true)}
     // onEndEditing={() => this.props.bump(false)}
     return (
-      <View style={[Styles.container]}>
-        <Text style={Styles.text}>Flaschen- bzw. Eimergröße in ml</Text>
-        <TextInput
-            onChangeText={this._onValueChange}
-            value={this.state.bottleValue}
-            style={Styles.input}
-            keyboardType='number-pad'
-            returnKeyType='done'
-            clearButtonMode='always'
-            selectTextOnFocus={true}
-            onFocus={() => this.props.inputFocusScrollHandle(this.refs.bottlePicker)}
-            placeholder='Sprühflasche, Eimer etc.'
-            autoCorrect={false}
-            ref='bottlePicker'
+        <View style={[Styles.container]}>
+          <Text style={Styles.text}>Flaschen- bzw. Eimergröße in ml</Text>
+          <TextInput
+              onChangeText={this._onValueChange}
+              value={this.state.bottleValue.toString()}
+              style={Styles.input}
+              keyboardType='number-pad'
+              returnKeyType='done'
+              clearButtonMode='always'
+              selectTextOnFocus={true}
+              onFocus={() => this.props.inputFocusScrollHandle(this.refs.bottlePicker)}
+              placeholder='Sprühflasche, Eimer etc.'
+              autoCorrect={false}
+              ref='bottlePicker'
 
-        />
-        <Text style={Styles.text}>Häufig genutzte Größen</Text>
-        <SegmentedControlIOS
-            values={this.state.values}
-            onValueChange={this._onValueChange}
-            tintColor='#44bcff'
-            momentary={true}
-        />
-        <View style={{height: this.state.keyboardSpace}} />
-      </View>
+          />
+          <Text style={Styles.text}>Häufig genutzte Größen</Text>
+          <SegmentedControlIOS
+              values={this.state.values}
+              onValueChange={this._onValueChange}
+              tintColor='#44bcff'
+              momentary={true}
+          />
+          <View style={{height: this.state.keyboardSpace}} />
+        </View>
     );
   }
 });

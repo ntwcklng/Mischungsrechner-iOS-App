@@ -3,7 +3,8 @@ var MischungsrechnerContent = require('./MischungsrechnerContent');
 var {
   View,
   Text,
-  ScrollView
+  ScrollView,
+  TouchableWithoutFeedback
 } = React;
 var DefaultView = React.createClass({
   inputFocused (refName) {

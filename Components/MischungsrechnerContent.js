@@ -86,6 +86,7 @@ var MischungsrechnerContent = React.createClass({
   },
   inputFocusScroll(ref) {
     this.props.inputFocusScroll(ref);
+    ref.focus();
   },
   render: function() {
     if(this.state.part1Value !== 0 && this.state.part2Value !== 0 && this.state.bottleValue !== 0) {
