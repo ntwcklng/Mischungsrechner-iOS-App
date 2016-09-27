@@ -1,5 +1,4 @@
 var React = require('react-native');
-var TitleBar = require('./Components/TitleBar');
 var Result = require('./Components/Result');
 var HelpView = require('./Components/HelpView');
 var DefaultView = require('./Components/MainView');
